@@ -29,6 +29,7 @@ public class AdminController {
 	CategoryService categoryService;
 	@Autowired
 	ProductService productService;
+	
 
 	@GetMapping("/admin")
 	public String adminHome() {
