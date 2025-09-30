@@ -25,19 +25,20 @@ import com.sheryians.major.repository.UserRepository;
 public class GoogleOAuth2SuccessHandler implements AuthenticationSuccessHandler {
 	@Autowired
 	RoleRepository roleRepository;
-	
+
 	@Autowired
 	UserRepository userRepository;
-	
+
 	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
 		OAuth2AuthenticationToken token = (OAuth2AuthenticationToken) authentication;
 		String email = token.getPrincipal().getAttributes().get("email").toString();
-		if(userRepository.findUserByEmail(email).isPresent()) {
-			
-		}else {
+		if (userRepository.findUserByEmail(email).isPresent()) {
+
+		} else {
 			User user = new User();
 			user.setFirstName(token.getPrincipal().getAttributes().get("given_name").toString());
 			user.setLastName(token.getPrincipal().getAttributes().get("family_name").toString());

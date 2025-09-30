@@ -16,35 +16,35 @@ public class HomeController {
 	CategoryService categoryService;
 	@Autowired
 	ProductService productService;
-	
+
 	//
-	
-	@GetMapping({"/","/home"})
+
+	@GetMapping({ "/", "/home" })
 	public String home(Model model) {
-		model.addAttribute("cartCount",  GlobalData.cart.size());
+		model.addAttribute("cartCount", GlobalData.cart.size());
 		return "index";
 	}
-	
+
 	@GetMapping("/shop")
 	public String shop(Model model) {
 		model.addAttribute("categories", categoryService.getAllCategory());
 		model.addAttribute("products", productService.getAllProduct());
-		model.addAttribute("cartCount",  GlobalData.cart.size());
+		model.addAttribute("cartCount", GlobalData.cart.size());
 		return "shop";
 	}
-	
+
 	@GetMapping("/shop/category/{id}")
 	public String shopByCategory(Model model, @PathVariable int id) {
 		model.addAttribute("categories", categoryService.getAllCategory());
 		model.addAttribute("products", productService.getAllProductsByCategoryId(id));
-		model.addAttribute("cartCount",  GlobalData.cart.size());
+		model.addAttribute("cartCount", GlobalData.cart.size());
 		return "shop";
 	}
-	
+
 	@GetMapping("/shop/viewproduct/{id}")
 	public String viewProduct(Model model, @PathVariable int id) {
 		model.addAttribute("product", productService.getProductById(id).get());
-		model.addAttribute("cartCount",  GlobalData.cart.size());
+		model.addAttribute("cartCount", GlobalData.cart.size());
 		return "viewProduct";
 	}
 }
