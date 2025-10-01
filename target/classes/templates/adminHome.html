@@ -2,109 +2,120 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Admin Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
 
-	<!-- Bootstrap 4 -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+        }
+
+        /* Navbar */
+        .navbar {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Welcome Section */
+        .welcome {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Dashboard Cards */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card i {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover i {
+            transform: scale(1.2);
+        }
+    </style>
 </head>
 
 <body>
 
-	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
-			<a class="navbar-brand" th:href="@{/}">
-				<img th:src="@{/images/logo.png}" src="../static/images/logo.png" height="40"
-					alt="Admin Dashboard Logo" />
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+    <!-- Header Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" th:href="@{/}">Admin Panel</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" th:href="@{/admin}">
-							<i class="fas fa-home"></i> Admin Home
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" th:href="@{/logout}">
-							<i class="fas fa-sign-out-alt"></i> Logout
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+            <!-- Simple Header Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/admin}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/logout}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-	<!-- Welcome Section -->
-	<div class="jumbotron text-center mb-0">
-		<h1 class="display-4">Welcome back, Admin</h1>
-		<p class="lead">Easily manage your content, users, and settings through this <mark>CMS</mark> dashboard.</p>
-	</div>
+    <!-- Welcome Text -->
+    <div class="welcome">
+        <h1 class="display-5">Welcome Admin 👋</h1>
+        <p class="text-muted">Manage your categories, products, and users with ease.</p>
+    </div>
 
-	<!-- Dashboard Cards -->
-	<div class="container-fluid py-4">
-		<div class="row">
-			<!-- Categories -->
-			<div class="col-md-4 mb-4">
-				<div class="card shadow-sm">
-					<div class="card-body text-center">
-						<i class="fas fa-list fa-2x mb-2 text-primary"></i>
-						<h5 class="card-title">Categories</h5>
-						<p class="card-text">Manage the product categories.</p>
-						<a th:href="@{/admin/categories}" class="btn btn-outline-primary">Manage</a>
-					</div>
-				</div>
-			</div>
+    <!-- Dashboard Options -->
+    <div class="container pb-5">
+        <div class="row text-center">
 
-			<!-- Products -->
-			<div class="col-md-4 mb-4">
-				<div class="card shadow-sm">
-					<div class="card-body text-center">
-						<i class="fas fa-box-open fa-2x mb-2 text-success"></i>
-						<h5 class="card-title">Products</h5>
-						<p class="card-text">View and update product listings.</p>
-						<a th:href="@{/admin/products}" class="btn btn-outline-success">Manage</a>
-					</div>
-				</div>
-			</div>
+            <!-- Categories -->
+            <div class="col-md-4 mb-4">
+                <div class="card p-4">
+                    <i class="fas fa-list fa-2x text-primary mb-3"></i>
+                    <h5>Categories</h5>
+                    <p class="small text-muted">Manage product categories</p>
+                    <a th:href="@{/admin/categories}" class="btn btn-outline-primary btn-sm">Manage</a>
+                </div>
+            </div>
 
-			<!-- Users -->
-			<div class="col-md-4 mb-4">
-				<div class="card shadow-sm">
-					<div class="card-body text-center">
-						<i class="fas fa-users fa-2x mb-2 text-info"></i>
-						<h5 class="card-title">Users</h5>
-						<p class="card-text">Manage registered users and roles.</p>
-						<a th:href="@{/admin/users}" class="btn btn-outline-info">Manage</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+            <!-- Products -->
+            <div class="col-md-4 mb-4">
+                <div class="card p-4">
+                    <i class="fas fa-box-open fa-2x text-success mb-3"></i>
+                    <h5>Products</h5>
+                    <p class="small text-muted">View & update products</p>
+                    <a th:href="@{/admin/products}" class="btn btn-outline-success btn-sm">Manage</a>
+                </div>
+            </div>
 
-	<!-- Scripts -->
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-		crossorigin="anonymous"></script>
+            <!-- Users -->
+            <div class="col-md-4 mb-4">
+                <div class="card p-4">
+                    <i class="fas fa-users fa-2x text-info mb-3"></i>
+                    <h5>Users</h5>
+                    <p class="small text-muted">Manage users & roles</p>
+                    <a th:href="@{/admin/users}" class="btn btn-outline-info btn-sm">Manage</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
