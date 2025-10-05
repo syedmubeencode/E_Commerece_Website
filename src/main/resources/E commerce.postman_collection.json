@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "9524192b-2dd8-4c7c-8100-e2f8c62f6cca",
+		"name": "E commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24097514"
+	},
+	"item": [
+		{
+			"name": "LC /login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:host}}/login",
+					"protocol": "http",
+					"host": [
+						"{{ip:host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LC /register",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/register",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LC /register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip:port}}/register",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HC //home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}//home",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HC /shop",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/shop",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"shop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HC  /shop/category/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}//shop/category/1",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"",
+						"shop",
+						"category",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HC /shop/viewproduct/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/shop/viewproduct/3",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"shop",
+						"viewproduct",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CC /addToCart/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/addToCart/1",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"addToCart",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CC /cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/cart",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CC /cart/removeItem/{index}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/cart/removeItem/1",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"cart",
+						"removeItem",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CC /checkout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/checkout",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC /admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/admin",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC /admin/categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/admin/categories",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"admin",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC /admin/categories/add",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/admin/categories/add",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"admin",
+						"categories",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC /admin/categories/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/admin/categories/add",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"admin",
+						"categories",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC /admin/categories/delete/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/admin/categories/delete/1",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"admin",
+						"categories",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC /admin/categories/update/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/admin/categories/update/1",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"admin",
+						"categories",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC /admin/products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/admin/products",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"admin",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC /admin/products/add",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/admin/products/add",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"admin",
+						"products",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC /admin/products/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/admin/products/add",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"admin",
+						"products",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC /admin/product/delete/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/admin/product/delete/1",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"admin",
+						"product",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC /admin/product/update/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip:port}}/admin/product/update/1",
+					"protocol": "http",
+					"host": [
+						"{{ip:port}}"
+					],
+					"path": [
+						"admin",
+						"product",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
