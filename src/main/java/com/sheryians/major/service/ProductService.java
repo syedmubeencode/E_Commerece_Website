@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sheryians.major.model.Product;
+import com.commerce.pickel.store.model.Product;
 import com.sheryians.major.repository.ProductRepository;
 
 @Service

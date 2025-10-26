@@ -1,4 +1,4 @@
-package com.sheryians.major.controller;
+package com.commerce.pickel.store.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.sheryians.major.global.GlobalData;
-import com.sheryians.major.model.Product;
+import com.commerce.pickel.store.global.GlobalData;
+import com.commerce.pickel.store.model.Product;
 import com.sheryians.major.service.ProductService;
 
 @Controller

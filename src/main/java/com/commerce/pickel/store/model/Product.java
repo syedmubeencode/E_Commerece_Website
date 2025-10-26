@@ -1,4 +1,4 @@
-package com.sheryians.major.model;
+package com.commerce.pickel.store.model;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

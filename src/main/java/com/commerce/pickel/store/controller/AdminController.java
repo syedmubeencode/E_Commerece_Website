@@ -1,4 +1,4 @@
-package com.sheryians.major.controller;
+package com.commerce.pickel.store.controller;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.sheryians.major.dto.ProductDTO;
-import com.sheryians.major.model.Category;
-import com.sheryians.major.model.Product;
+import com.commerce.pickel.store.dto.ProductDTO;
+import com.commerce.pickel.store.model.Category;
+import com.commerce.pickel.store.model.Product;
 import com.sheryians.major.service.CategoryService;
 import com.sheryians.major.service.ProductService;
 

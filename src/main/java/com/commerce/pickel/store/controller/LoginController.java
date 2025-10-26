@@ -1,4 +1,4 @@
-package com.sheryians.major.controller;
+package com.commerce.pickel.store.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.sheryians.major.global.GlobalData;
-import com.sheryians.major.model.Role;
-import com.sheryians.major.model.User;
+import com.commerce.pickel.store.global.GlobalData;
+import com.commerce.pickel.store.model.Role;
+import com.commerce.pickel.store.model.User;
 import com.sheryians.major.repository.RoleRepository;
 import com.sheryians.major.repository.UserRepository;
 

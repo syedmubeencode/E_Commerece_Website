@@ -14,5 +14,5 @@ COPY roles TO 'C:\\Users\\Public\\role.csv' WITH (FORMAT CSV, HEADER);
 
 
 	## Insert Data dump
-COPY roles FROM 'C:\\Users\\Public\\roles.csv' WITH (FORMAT CSV, HEADER);
+COPY roles (id, name) FROM 'C:\\Users\\Public\\roles.csv'WITH (FORMAT CSV, HEADER);
 

@@ -1,4 +1,4 @@
-package com.sheryians.major.dto;
+package com.commerce.pickel.store.dto;
 
 import lombok.Data;
 

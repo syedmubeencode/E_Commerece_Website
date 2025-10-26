@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.sheryians.major.model.CustomUserDetail;
-import com.sheryians.major.model.User;
+import com.commerce.pickel.store.model.CustomUserDetail;
+import com.commerce.pickel.store.model.User;
 import com.sheryians.major.repository.UserRepository;
 
 @Service

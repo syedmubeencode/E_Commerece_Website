@@ -1,9 +1,9 @@
-package com.sheryians.major.global;
+package com.commerce.pickel.store.global;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sheryians.major.model.Product;
+import com.commerce.pickel.store.model.Product;
 
 public class GlobalData {
 	public static List<Product> cart;

@@ -1,4 +1,4 @@
-package com.sheryians.major.configuration;
+package com.commerce.pickel.store.configuration;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,8 +16,8 @@ import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
-import com.sheryians.major.model.Role;
-import com.sheryians.major.model.User;
+import com.commerce.pickel.store.model.Role;
+import com.commerce.pickel.store.model.User;
 import com.sheryians.major.repository.RoleRepository;
 import com.sheryians.major.repository.UserRepository;
 
