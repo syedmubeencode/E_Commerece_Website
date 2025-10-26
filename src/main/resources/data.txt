@@ -10,9 +10,77 @@ insert into user_role(user_id, role_id) values
 (1,2);
 
 	## Create backup
-COPY roles TO 'C:\\Users\\Public\\role.csv' WITH (FORMAT CSV, HEADER);
+COPY roles TO 'D:\DB_Backup\roles.csv' WITH (FORMAT CSV, HEADER);
 
 
 	## Insert Data dump
 COPY roles (id, name) FROM 'C:\\Users\\Public\\roles.csv'WITH (FORMAT CSV, HEADER);
+
+
+		## CREATE SCRIPTS ##
+		
+CREATE TABLE IF NOT EXISTS public.category
+(
+    category_id integer NOT NULL,
+    name character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT category_pkey PRIMARY KEY (category_id)
+)
+
+
+CREATE TABLE IF NOT EXISTS public.product
+(
+    id bigint NOT NULL,
+    description character varying(255) COLLATE pg_catalog."default",
+    image_name character varying(255) COLLATE pg_catalog."default",
+    name character varying(255) COLLATE pg_catalog."default",
+    price double precision NOT NULL,
+    weight double precision NOT NULL,
+    category_id integer,
+    CONSTRAINT product_pkey PRIMARY KEY (id),
+    CONSTRAINT fk1mtsbur82frn64de7balymq9s FOREIGN KEY (category_id)
+        REFERENCES public.category (category_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+
+CREATE TABLE IF NOT EXISTS public.roles
+(
+    id integer NOT NULL,
+    name character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT roles_pkey PRIMARY KEY (id),
+    CONSTRAINT uk_ofx66keruapi6vyqpv6f2or37 UNIQUE (name)
+)
+
+
+
+CREATE TABLE IF NOT EXISTS public.user_role
+(
+    user_id integer NOT NULL,
+    role_id integer NOT NULL,
+    CONSTRAINT fkj345gk1bovqvfame88rcx7yyx FOREIGN KEY (user_id)
+        REFERENCES public.users (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fkt7e7djp752sqn6w22i6ocqy6q FOREIGN KEY (role_id)
+        REFERENCES public.roles (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+
+
+CREATE TABLE IF NOT EXISTS public.users
+(
+    id integer NOT NULL,
+    email character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    first_name character varying(255) COLLATE pg_catalog."default",
+    last_name character varying(255) COLLATE pg_catalog."default",
+    password character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT users_pkey PRIMARY KEY (id),
+    CONSTRAINT uk_6dotkott2kjsp8vw4d0m25fb7 UNIQUE (email)
+)
+
+
+User -> Role ->
 
